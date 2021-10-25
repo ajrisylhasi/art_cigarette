@@ -20,7 +20,7 @@ body {
   font-weight: 300;
   font-style: normal;
   font-display: swap; }
-p, h2, h3 {
+p, h2, h3, input, a {
   font-family: 'Norpeth';
   font-weight: 300;
   margin: 0;
@@ -48,7 +48,7 @@ h3 {
   margin-top: 10px; }
 
 .medium-top-margin {
-  margin-top: 25px; }
+  margin-top: 45px; }
 
 .main {
   margin-top: 110px;
@@ -63,11 +63,11 @@ h3 {
   width: 100%;
   max-width: 1600px;
   background-image: url("../images/back-header.png");
-  background-size: 100% 100%;
+  background-size: 100% 99.9%;
   background-color: black;
   min-height: 220px;
   z-index: 2;
-  clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.06% 100%, 43.35% 50%, 0 54.2%, 0 0); }
+  clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.07% 100%, 43.35% 50%, 0 54.2%, 0 0); }
   .header .menu {
     position: relative;
     display: flex; }
@@ -78,8 +78,10 @@ h3 {
   position: relative;
   padding-left: 200px;
   padding-right: 200px;
-  min-height: 500px;
-  background: blue; }
+  min-height: 755px;
+  background-image: url("../images/hero.jpg");
+  background-size: 100% 100%;
+  background-color: black; }
 
 .technology {
   position: relative;
@@ -101,14 +103,48 @@ h3 {
   padding-right: 200px;
   padding-top: 150px;
   padding-bottom: 150px;
-  background: url("../images/back-footer.jpg"), url("../images/back-footer-over.jpg");
+  background: url("../images/back-footer.jpg");
   background-size: 100% 100%;
   background-color: black;
   display: flex;
   color: white; }
-  .footer div {
+  .footer > div {
     width: 33%;
     padding-left: 50px;
-    padding-right: 50px; }
+    padding-right: 50px;
+    margin-top: 35px; }
+    .footer > div .social {
+      display: flex; }
+      .footer > div .social a {
+        margin-right: 5px;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        transition: background-color 0.5s; }
+        .footer > div .social a:hover {
+          background-color: #b2b2b2; }
+        .footer > div .social a img {
+          margin-top: auto;
+          width: 25px;
+          height: 22px;
+          text-align: center; }
+    .footer > div:first-child {
+      margin-top: 0; }
+    .footer > div .form input {
+      height: 30px;
+      width: 200px;
+      border-radius: 0px;
+      border: none;
+      color: #999999;
+      padding-left: 15px; }
+      .footer > div .form input[type=submit] {
+        background-color: black;
+        border: solid 1px white;
+        font-weight: 300;
+        width: 75px;
+        color: white;
+        transition: background-color 0.5s; }
+        .footer > div .form input[type=submit]:hover {
+          background-color: #333333; }
 
 /*# sourceMappingURL=style.css.map */
