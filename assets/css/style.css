@@ -1,1 +1,114 @@
-style.css
+body {
+  background: black;
+  margin: 0; }
+
+@font-face {
+  font-family: 'Norpeth';
+  src: url("../fonts/NorpethBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Norpeth';
+  src: url("../fonts/NorpethLight.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Norpeth';
+  src: url("../fonts/NorpethMedium.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+p, h2, h3 {
+  font-family: 'Norpeth';
+  font-weight: 300;
+  margin: 0;
+  color: white; }
+
+p {
+  font-size: 12px; }
+  p.large {
+    font-size: 14px; }
+  p.larger {
+    font-size: 16px; }
+
+h2 {
+  font-size: 24px; }
+  h2 .bold {
+    font-weight: 700; }
+
+h3 {
+  font-size: 20px;
+  font-weight: 700; }
+  h3 .light {
+    font-weight: 300; }
+
+.small-top-margin {
+  margin-top: 10px; }
+
+.medium-top-margin {
+  margin-top: 25px; }
+
+.main {
+  margin-top: 110px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 220px;
+  width: 100%;
+  max-width: 1600px;
+  background-image: url("../images/back-header.png");
+  background-size: 100% 100%;
+  background-color: black;
+  min-height: 220px;
+  z-index: 2;
+  clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.06% 100%, 43.35% 50%, 0 54.2%, 0 0); }
+  .header .menu {
+    position: relative;
+    display: flex; }
+    .header .menu div {
+      display: flex; }
+
+.hero {
+  position: relative;
+  padding-left: 200px;
+  padding-right: 200px;
+  min-height: 500px;
+  background: blue; }
+
+.technology {
+  position: relative;
+  padding-left: 200px;
+  padding-right: 200px;
+  min-height: 500px;
+  background: green; }
+
+.about {
+  position: relative;
+  padding-left: 200px;
+  padding-right: 200px;
+  min-height: 500px;
+  background: pink; }
+
+.footer {
+  position: relative;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background: url("../images/back-footer.jpg"), url("../images/back-footer-over.jpg");
+  background-size: 100% 100%;
+  background-color: black;
+  display: flex;
+  color: white; }
+  .footer div {
+    width: 33%;
+    padding-left: 50px;
+    padding-right: 50px; }
+
+/*# sourceMappingURL=style.css.map */
