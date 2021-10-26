@@ -75,13 +75,13 @@ h3 {
 .header {
 	position: fixed;
 	top: 0;
-	height: 220px;
+	height: 13vw;
 	width: 100%;
 	max-width: 1600px;
 	background-image: url('../images/back-header.png');
 	background-size: 100% 99.9%;
 	background-color: black;
-	min-height: 220px;
+	max-height: 220px;
 	z-index: 2;
 	clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.07% 100%, 43.35% 50%, 0 54.2%, 0 0);
 	.menu {
@@ -115,8 +115,10 @@ h3 {
 	position: relative;
 	padding-left: 200px;
 	padding-right: 200px;
-	min-height: 500px;
-	background: pink;
+	min-height: 670px;
+	background-image: url('../images/back-about.jpg');
+	background-color: black;
+	background-size: 100.7% 100%;
 }
 
 .products {
@@ -146,21 +148,18 @@ h3 {
 		}
 		h3 {
 			margin-top: 25px;
-			border-bottom:  1px solid #009fe3;;
+			border-bottom:  1px solid #009fe3;
 			width: 30%;
 			margin-left: auto;
 			margin-right: auto;
-			
 		}
-	}
-	div:nth-child(0) {
-		h3 {
+		h3.first {
 			border-bottom: 1px solid #e6007e;
 		}
 	}
 	div:last-child {			
 		h3 {
-			border-bottom: 1px solid #e30613;;
+			border-bottom: 1px solid #e30613;
 		}
 	}
 }
