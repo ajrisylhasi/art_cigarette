@@ -64,6 +64,14 @@ h3 {
   margin-left: auto;
   margin-right: auto; }
 
+.target {
+  position: absolute;
+  top: -100px; }
+  .target.higher {
+    top: -150px; }
+  .target:before {
+    display: none; }
+
 .header {
   position: fixed;
   top: 0;

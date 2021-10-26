@@ -81,6 +81,17 @@ h3 {
 	margin-right: auto;
 }
 
+.target {
+	position: absolute;
+	top: -100px;
+	&.higher {
+		top: -150px;
+	}
+	&:before {
+		display:  none;
+	}
+}
+
 .header {
 	position: fixed;
 	top: 0;
