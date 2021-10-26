@@ -10,19 +10,18 @@
 	<body>
 		<h1>Art Cigarette</h1>
 		<span class="target" id="home"></span>
-		<div class="main">
-
+		<div class="main" id="main">
 			<div class="header">
 				<div class="menu">
 					<div>
-						<a href="#home">HOME</a>
-						<a href="#technology">FEATURES</a>
-						<a href="#about">ABOUT</a>
+						<a href="#home" id="btn-home">HOME</a>
+						<a href="#technology" id="btn-tech">FEATURES</a>
+						<a href="#about" id="btn-about">ABOUT</a>
 					</div>
 					<div>
-						<a href="#products">SERVICES</a>
+						<a href="#products" id="btn-products">SERVICES</a>
 						<a href="#">SHOP</a>
-						<a href="#footer">CONTACT</a>
+						<a href="#footer" id="btn-footer">CONTACT</a>
 					</div>
 				</div>
 			</div>
@@ -64,9 +63,9 @@
 				<div>
 					<img src="assets/images/logo.png">
 					<p class="larger small-top-margin">+ 386 49 00 00 00</p>
-					<p class="large">info@artcigarette.com</p>
+					<p class="large"><a href="mailto:info@artcigarette.com">info@artcigarette.com</a></p>
 					<p class="large medium-top-margin">Adresa: Lorem Ipsum 90 </p>
-					<p class="large">1000. Prishtinë-Kosovë</p>
+					<p class="large">10000. Prishtinë-Kosovë</p>
 				</div>
 				<div>
 					<h3>Contact Us</h3>
@@ -107,6 +106,55 @@
 		</div>
 	</body>
 	<script>
+		const scroll = document.documentElement.scrollTop || document.body.scrollTop;
+		if((document.body.offsetHeight - scroll) < 580) {
+			cleanBtns();
+			document.getElementById('btn-footer').classList.add('active');
+		} else if(scroll > document.getElementById('products').offsetParent.offsetTop - 100) {
+			cleanBtns();
+			document.getElementById('btn-products').classList.add('active');
+		} else if(scroll > document.getElementById('about').offsetParent.offsetTop - 100) {
+			cleanBtns();
+			document.getElementById('btn-about').classList.add('active');
+		} else if(scroll > document.getElementById('technology').offsetParent.offsetTop - 150) {
+			cleanBtns();
+			document.getElementById('btn-tech').classList.add('active');
+		} else {
+			cleanBtns();
+			document.getElementById('btn-home').classList.add('active');
+		}
+		function cleanBtns(){
+			const btns = document.querySelectorAll('.menu a');
+			// console.log(btns);
+			btns.forEach(btn => {
+			  btn.classList.remove('active');
+			})
+		}
+		function changeBtn() {
+		  const scroll = document.documentElement.scrollTop || document.body.scrollTop;
+		  if((document.body.offsetHeight - scroll) < 700) {
+		  	cleanBtns();
+		  	document.getElementById('btn-footer').classList.add('active');
+		  } else if(scroll > document.getElementById('products').offsetParent.offsetTop - 101) {
+		  	cleanBtns();
+		  	document.getElementById('btn-products').classList.add('active');
+		  } else if(scroll > document.getElementById('about').offsetParent.offsetTop - 101) {
+		  	cleanBtns();
+		  	document.getElementById('btn-about').classList.add('active');
+		  } else if(scroll > document.getElementById('technology').offsetParent.offsetTop - 151) {
+		  	cleanBtns();
+		  	document.getElementById('btn-tech').classList.add('active');
+		  } else {
+		  	cleanBtns();
+		  	document.getElementById('btn-home').classList.add('active');
+		  }
+		}
+		document.addEventListener('scroll', function(e) {
+		  changeBtn();
+		});
+		document.addEventListener('click', function(e) {
+		  changeBtn();
+		});
 	</script>
 </html>
 
