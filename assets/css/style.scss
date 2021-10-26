@@ -104,6 +104,22 @@ h3 {
 }
 
 .technology {
+	:before {
+		content: "";
+		clip-path: polygon(51% 30%, 0 100%, 100% 100%);
+		position: absolute;
+		top: -160px;
+		width: 155px;
+		height: 110px;
+		left: 0;
+		margin: auto;
+		right: 0;
+		background-image: url('../images/img-arrow.png');
+		background-position-x: 50%;
+		background-position-y: 95%;
+		background-repeat: no-repeat;
+		background-color: black;
+	}
 	position: relative;
 	padding-left: 200px;
 	padding-right: 200px;
