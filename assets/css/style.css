@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth; }
+
 body {
   background: black;
   margin: 0; }
@@ -33,6 +36,11 @@ p {
   p.larger {
     font-size: 16px; }
 
+h1 {
+  position: absolute;
+  display: none;
+  top: 0; }
+
 h2 {
   font-size: 24px; }
   h2 .bold {
@@ -65,14 +73,38 @@ h3 {
   background-image: url("../images/back-header.png");
   background-size: 100% 99.9%;
   background-color: black;
+  clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.07% 100%, 43.35% 50%, 0 54.2%, 0 0);
   max-height: 220px;
-  z-index: 2;
-  clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.07% 100%, 43.35% 50%, 0 54.2%, 0 0); }
+  z-index: 2; }
   .header .menu {
     position: relative;
-    display: flex; }
+    display: flex;
+    margin-top: 3.5vw; }
     .header .menu div {
-      display: flex; }
+      display: flex;
+      justify-content: center;
+      width: 50%; }
+      .header .menu div a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 300;
+        color: #bbb;
+        transition: all 0.5s ease-out;
+        border-bottom: 0;
+        padding-bottom: 5px; }
+        .header .menu div a:hover {
+          font-size: 18px;
+          font-weight: 700;
+          color: white; }
+        .header .menu div a.active {
+          font-size: 18px;
+          font-weight: 700;
+          color: white;
+          border-bottom: solid 1px white; }
+      .header .menu div:first-child a {
+        margin-left: 70px; }
+      .header .menu div:last-child a {
+        margin-right: 70px; }
 
 .hero {
   position: relative;
