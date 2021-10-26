@@ -107,8 +107,28 @@ h3 {
 	position: relative;
 	padding-left: 200px;
 	padding-right: 200px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 	min-height: 500px;
-	background: green;
+	background-color: black;
+	background-image: url('../images/back-technology.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;	
+	flex-wrap: wrap;
+	align-items: flex-start;
+	h2 {
+		margin-top: 50px;
+		flex-basis: 100%;
+		text-align: center;
+		max-width: 200px;
+		width: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 50px;
+		box-shadow: 0 10px 20px -17px white;
+	}
 }
 
 .about {
@@ -151,6 +171,7 @@ h3 {
 				padding: 7.5px 15px;
 				border-bottom: 3px solid #a8a8a7;
 				transition: background-color 0.5s;
+				text-decoration: none;
 				&:hover {
 					background-color:  #b2b2b2;
 				}
