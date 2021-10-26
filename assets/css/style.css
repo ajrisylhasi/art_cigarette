@@ -97,7 +97,38 @@ h3 {
   min-height: 670px;
   background-image: url("../images/back-about.jpg");
   background-color: black;
-  background-size: 100.7% 100%; }
+  background-size: 100.7% 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+  .about h2 {
+    margin-top: 150px;
+    flex-basis: 100%;
+    text-align: center;
+    width: auto;
+    height: 0; }
+  .about > div {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .about > div img {
+      width: 20%;
+      text-align: right;
+      max-width: 250px; }
+    .about > div div {
+      margin-left: 35px;
+      width: 60%; }
+      .about > div div a {
+        float: right;
+        background-color: white;
+        color: black;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 7.5px 15px;
+        border-bottom: 3px solid #a8a8a7;
+        transition: background-color 0.5s; }
+        .about > div div a:hover {
+          background-color: #b2b2b2; }
 
 .products {
   position: relative;

@@ -119,6 +119,44 @@ h3 {
 	background-image: url('../images/back-about.jpg');
 	background-color: black;
 	background-size: 100.7% 100%;
+	display: flex;	
+	flex-wrap: wrap;
+	align-items: flex-start;
+	h2 {
+		margin-top: 150px;
+		flex-basis: 100%;
+		text-align: center;
+		width: auto;
+		height: 0;
+
+	}
+	> div {
+		display: flex;	
+		align-items: center;
+		justify-content: center;
+		img {
+			width: 20%;
+			text-align: right;
+			max-width: 250px;
+		}
+		div {
+			margin-left: 35px;
+			width:  60%;
+			a {
+				float: right;
+				background-color: white;
+				color: black;
+				font-size: 16px;
+				font-weight: 700;
+				padding: 7.5px 15px;
+				border-bottom: 3px solid #a8a8a7;
+				transition: background-color 0.5s;
+				&:hover {
+					background-color:  #b2b2b2;
+				}
+			}
+		}
+	}
 }
 
 .products {
