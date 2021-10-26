@@ -42,7 +42,7 @@ h3 {
   font-size: 20px;
   font-weight: 700; }
   h3 .light {
-    font-weight: 300; }
+    font-weight: 200; }
 
 .small-top-margin {
   margin-top: 10px; }
@@ -96,6 +96,40 @@ h3 {
   padding-right: 200px;
   min-height: 500px;
   background: pink; }
+
+.products {
+  position: relative;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 75px;
+  padding-bottom: 100px;
+  min-height: 500px;
+  background-color: black;
+  background-image: url("../images/back-products.png");
+  background-size: 100% 110%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
+  .products h2 {
+    flex-basis: 100%;
+    text-align: center;
+    width: auto;
+    margin-bottom: 25px; }
+  .products div {
+    width: 33%;
+    text-align: center; }
+    .products div img {
+      height: 200px; }
+    .products div h3 {
+      margin-top: 25px;
+      border-bottom: 1px solid #009fe3;
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto; }
+  .products div:nth-child(0) h3 {
+    border-bottom: 1px solid #e6007e; }
+  .products div:last-child h3 {
+    border-bottom: 1px solid #e30613; }
 
 .footer {
   position: relative;
