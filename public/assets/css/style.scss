@@ -5,6 +5,12 @@ body {
 	background: black;
 	margin: 0;
 }
+body.no-scroll {
+	overflow: hidden;
+}
+
+$mobile: 1079px;
+$min-mobile: 440px;
 
 @font-face {
   font-family: 'Norpeth';
@@ -75,7 +81,10 @@ h3 {
 }
 
 .main{
-	margin-top: 110px;
+	margin-top: 6vw;
+	@media(max-width: $min-mobile) {
+		margin-top: 23vw;
+	}
 	max-width: 1600px;
 	margin-left: auto;
 	margin-right: auto;
@@ -92,7 +101,80 @@ h3 {
 	}
 }
 
+#main-nav-wrap {
+	height:  0px;
+	width: 100%;
+	position: fixed;
+	z-index: 2;
+	background-color: black;
+	transition: height 0.5s;
+	display: flex;
+	align-items: center;
+	* {
+		opacity: 0;
+		transition: opacity 0.5;
+	}
+	ul {
+		position: relative;
+		display:  flex;
+		flex-wrap: wrap;
+		height: 50%;
+		width: 100%;
+		padding-left: 0;
+		li {
+			width:  100%;
+			text-align: center;
+			list-style: none;
+			font-size: 25px;
+		}
+	}
+	&.open{
+		height: calc(100%);
+		* {
+			opacity: 1;
+		}
+	}
+}
+
 .header {
+	.mobile-logo{
+		display: none;
+		cursor: pointer;
+		top: 50%;
+		left: 15%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		width: 70px;
+	}
+	.menu-toggle {
+		display: none;
+		cursor: pointer;
+	  top: 50%;
+	  right: 5%;
+	  transform: translate(-50%, -50%);
+	  position: absolute;
+	  width: 50px;
+	  &:before, &:after, div {
+		  background: #fff;
+		  content: "";
+		  display: block;
+		  height: 6px;
+		  border-radius: 3px;
+		  margin: 7px 0;
+		  transition: 0.5s;
+	  }
+	  &.open {
+	  	&:before {
+	  		transform: translateY(12px) rotate(135deg);
+	  	}
+	  	&:after {
+	  		transform: translateY(-12px) rotate(-135deg);
+	  	}
+	  	div {
+	  		transform: scale(0);
+	  	}
+	  }
+	}
 	position: fixed;
 	top: 0;
 	height: 13vw;
@@ -104,10 +186,40 @@ h3 {
 	clip-path: polygon(100% 0, 100% 54.2%, 56.65% 50%, 50.07% 100%, 43.35% 50%, 0 54.2%, 0 0);
 	max-height: 220px;
 	z-index: 2;
+	@media(min-width:  $min-mobile) and (max-width: $mobile){
+		background-size: unset;
+		height: 50vw;
+		background-position: 50% 0%;
+		background-repeat: no-repeat;
+		clip-path: polygon(100% 0, 100% calc(50% - 3px), calc(50% + 88px) calc(50% - 4px), calc(50% + 1px) calc(100% - 20px), calc(50% - 88px) calc(50% - 4px), 0 calc(50% - 3px), 0 0);
+		.menu-toggle {
+			top: 25%;
+		}
+		.mobile-logo {
+			top: 25%;
+		}
+	}	
+	@media(max-width: $min-mobile) {
+		height: 107px;
+		clip-path: none;
+		background-size: unset;	
+	}
+	@media(max-width: $mobile) {
+		.menu-toggle {
+			display: block;
+		}
+		.mobile-logo {
+			display: block;
+		}
+	}
 	.menu {
+		@media(max-width: $mobile){
+			display:  none;
+		}
 		position: relative;
 		display:  flex;
-		margin-top: 3.5vw;
+		height: 100%;
+		top: 30%;
 		div {
 			display:  flex;
 			justify-content: center;
@@ -127,6 +239,7 @@ h3 {
 				}
 				&.active {
 					font-size: 18px;
+					text-decoration: underline;
 					font-weight: 700;
 					color: white;
 					border-bottom: solid 1px white;
@@ -144,6 +257,7 @@ h3 {
 			}
 		}
 	}
+	
 }
 
 .hero {
@@ -259,6 +373,13 @@ h3 {
 	background-color: black;
 	background-image: url('../images/back-products.png');
 	background-size: 100% 110%;
+	@media (max-width: $mobile) {
+  	background-size: 150% 100%;
+		flex-wrap: wrap;
+		padding-left: 10px;
+		padding-right: 10px;
+		display: block;
+	}
 	display: flex;	
 	flex-wrap: wrap;
 	align-items: center;
@@ -300,6 +421,13 @@ h3 {
 	padding-bottom:  150px;
 	background: url('../images/back-footer.jpg');
 	background-size: 100% 100%;
+	@media (max-width: $mobile) {
+		padding-left: 20px;
+		padding-right: 20px;
+  	background-size: auto 100%;
+  	background-position: 50%;
+		flex-wrap: wrap;
+	}
 	background-color: black;
 	display: flex;
 	color:  white;
@@ -307,9 +435,14 @@ h3 {
 		width: 33%;
 		padding-left: 50px;
 		padding-right: 50px;
+		@media(max-width:  $mobile) {
+			width:  100%;
+			text-align: center;
+		}
 		margin-top: 35px;
 		.social {
 			display: flex;
+			justify-content: center;
 			a{
 				margin-right: 5px;
 				width: 25px;
