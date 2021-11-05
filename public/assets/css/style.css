@@ -68,7 +68,9 @@ h3 {
   margin-right: auto; }
   @media (max-width: 440px) {
     .main {
-      margin-top: 23vw; } }
+      margin-top: 23vw;
+      max-width: 100%;
+      overflow-x: hidden; } }
 
 .target {
   position: absolute;
@@ -82,14 +84,11 @@ h3 {
   height: 0px;
   width: 100%;
   position: fixed;
-  z-index: 2;
+  z-index: 0;
   background-color: black;
-  transition: height 0.5s;
+  transition: height 0.5s, z-index 0.5s;
   display: flex;
   align-items: center; }
-  #main-nav-wrap * {
-    opacity: 0;
-    transition: opacity 0.5; }
   #main-nav-wrap ul {
     position: relative;
     display: flex;
@@ -99,12 +98,15 @@ h3 {
     padding-left: 0; }
     #main-nav-wrap ul li {
       width: 100%;
+      opacity: 0;
       text-align: center;
       list-style: none;
-      font-size: 25px; }
+      font-size: 25px;
+      transition: opacity 0.25s; }
   #main-nav-wrap.open {
-    height: calc(100%); }
-    #main-nav-wrap.open * {
+    height: calc(100%);
+    z-index: 2; }
+    #main-nav-wrap.open li {
       opacity: 1; }
 
 .header {
@@ -211,8 +213,14 @@ h3 {
   padding-right: 200px;
   min-height: 755px;
   background-image: url("../images/hero.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: 50%;
   background-color: black; }
+  @media (max-width: 1079px) {
+    .hero {
+      background-image: url("../images/hero-mobile.jpg");
+      padding-left: 0px;
+      padding-right: 0px; } }
 
 .technology {
   position: relative;
@@ -244,6 +252,13 @@ h3 {
     background-position-y: 95%;
     background-repeat: no-repeat;
     background-color: black; }
+  @media (max-width: 1079px) {
+    .technology {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-size: 90%;
+      background-position-x: 100%;
+      background-position-y: 50%; } }
   .technology h2 {
     margin-top: 50px;
     flex-basis: 100%;
@@ -272,6 +287,16 @@ h3 {
     text-align: center;
     width: auto;
     height: 0; }
+  @media (max-width: 1079px) {
+    .about {
+      padding-left: 0px;
+      min-height: unset;
+      padding-right: 0px;
+      background-size: auto 100%;
+      background-position-x: calc(50% + 5px); }
+      .about h2 {
+        margin-top: 75px;
+        height: auto; } }
   .about > div {
     display: flex;
     align-items: center;
@@ -280,9 +305,20 @@ h3 {
       width: 20%;
       text-align: right;
       max-width: 250px; }
+    @media (max-width: 1079px) {
+      .about > div {
+        margin: 50px auto;
+        display: block;
+        text-align: center; } }
     .about > div div {
       margin-left: 35px;
       width: 60%; }
+      @media (max-width: 1079px) {
+        .about > div div {
+          margin: 35px;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto; } }
       .about > div div a {
         float: right;
         background-color: white;
@@ -293,6 +329,11 @@ h3 {
         border-bottom: 3px solid #a8a8a7;
         transition: background-color 0.5s;
         text-decoration: none; }
+        @media (max-width: 1079px) {
+          .about > div div a {
+            display: block;
+            float: none;
+            margin-top: 50px; } }
         .about > div div a:hover {
           background-color: #b2b2b2; }
 
@@ -312,7 +353,6 @@ h3 {
   @media (max-width: 1079px) {
     .products {
       background-size: 150% 100%;
-      flex-wrap: wrap;
       padding-left: 10px;
       padding-right: 10px;
       display: block; } }
@@ -324,6 +364,11 @@ h3 {
   .products div {
     width: 33%;
     text-align: center; }
+    @media (max-width: 1079px) {
+      .products div {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px; } }
     .products div img {
       height: 200px; }
     .products div h3 {
@@ -332,6 +377,9 @@ h3 {
       width: 30%;
       margin-left: auto;
       margin-right: auto; }
+      @media (max-width: 1079px) {
+        .products div h3 {
+          margin-top: 0px; } }
     .products div h3.first {
       border-bottom: 1px solid #e6007e; }
   .products div:last-child h3 {

@@ -84,6 +84,8 @@ h3 {
 	margin-top: 6vw;
 	@media(max-width: $min-mobile) {
 		margin-top: 23vw;
+		max-width: 100%;
+		overflow-x: hidden;
 	}
 	max-width: 1600px;
 	margin-left: auto;
@@ -105,15 +107,11 @@ h3 {
 	height:  0px;
 	width: 100%;
 	position: fixed;
-	z-index: 2;
+	z-index: 0;
 	background-color: black;
-	transition: height 0.5s;
+	transition: height 0.5s, z-index 0.5s;
 	display: flex;
 	align-items: center;
-	* {
-		opacity: 0;
-		transition: opacity 0.5;
-	}
 	ul {
 		position: relative;
 		display:  flex;
@@ -123,14 +121,17 @@ h3 {
 		padding-left: 0;
 		li {
 			width:  100%;
+			opacity: 0;
 			text-align: center;
 			list-style: none;
 			font-size: 25px;
+			transition: opacity 0.25s;
 		}
 	}
 	&.open{
 		height: calc(100%);
-		* {
+		z-index: 2;
+		li {
 			opacity: 1;
 		}
 	}
@@ -266,8 +267,14 @@ h3 {
 	padding-right: 200px;
 	min-height: 755px;
 	background-image: url('../images/hero.jpg');
-	background-size: 100% 100%;
+	background-size: cover;
+	background-position: 50%;
 	background-color: black;
+	@media(max-width: $mobile) {
+		background-image: url('../images/hero-mobile.jpg');
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }
 
 .technology {
@@ -298,6 +305,13 @@ h3 {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+	@media(max-width: $mobile) {
+		padding-left: 0px;
+		padding-right: 0px;
+		background-size: 90%;
+		background-position-x: 100%;
+		background-position-y: 50%;
+	}
 	display: flex;	
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -333,6 +347,17 @@ h3 {
 		height: 0;
 
 	}
+	@media(max-width: $mobile) {
+		padding-left: 0px;
+		min-height: unset;
+		padding-right: 0px;
+		background-size: auto 100%;
+		background-position-x: calc(50% + 5px);
+		h2 {
+			margin-top: 75px;
+			height: auto;
+		}
+	}
 	> div {
 		display: flex;	
 		align-items: center;
@@ -342,9 +367,20 @@ h3 {
 			text-align: right;
 			max-width: 250px;
 		}
+		@media(max-width: $mobile) {
+			margin: 50px auto;
+			display: block;	
+			text-align: center;
+		}
 		div {
 			margin-left: 35px;
 			width:  60%;
+			@media(max-width: $mobile) {
+				margin: 35px;
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+			}
 			a {
 				float: right;
 				background-color: white;
@@ -355,6 +391,11 @@ h3 {
 				border-bottom: 3px solid #a8a8a7;
 				transition: background-color 0.5s;
 				text-decoration: none;
+				@media(max-width: $mobile) {
+					display: block;
+					float: none;
+					margin-top:  50px;
+				}
 				&:hover {
 					background-color:  #b2b2b2;
 				}
@@ -375,7 +416,6 @@ h3 {
 	background-size: 100% 110%;
 	@media (max-width: $mobile) {
   	background-size: 150% 100%;
-		flex-wrap: wrap;
 		padding-left: 10px;
 		padding-right: 10px;
 		display: block;
@@ -392,11 +432,19 @@ h3 {
 	div {
 		width: 33%;
 		text-align: center;
+		@media(max-width: $mobile){
+			width: 100%;
+			text-align: center;
+			margin-top: 50px;
+		}
 		img {
 			height: 200px;
 		}
 		h3 {
 			margin-top: 25px;
+			@media(max-width: $mobile){
+				margin-top: 0px;
+			}
 			border-bottom:  1px solid #009fe3;
 			width: 30%;
 			margin-left: auto;
