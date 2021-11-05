@@ -8,6 +8,9 @@ body {
 body.no-scroll {
   overflow: hidden; }
 
+* {
+  -webkit-tap-highlight-color: transparent; }
+
 @font-face {
   font-family: 'Norpeth';
   src: url("../fonts/NorpethBold.ttf");
@@ -136,17 +139,17 @@ h3 {
     right: 5%;
     transform: translate(-50%, -50%);
     position: absolute;
-    width: 50px; }
+    width: 40px; }
     .header .menu-toggle:before, .header .menu-toggle:after, .header .menu-toggle div {
       background: #fff;
       content: "";
       display: block;
-      height: 6px;
+      height: 4px;
       border-radius: 3px;
       margin: 7px 0;
       transition: 0.5s; }
     .header .menu-toggle.open:before {
-      transform: translateY(12px) rotate(135deg); }
+      transform: translateY(9.5px) rotate(135deg); }
     .header .menu-toggle.open:after {
       transform: translateY(-12px) rotate(-135deg); }
     .header .menu-toggle.open div {

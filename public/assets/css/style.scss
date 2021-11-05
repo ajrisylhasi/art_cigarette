@@ -9,6 +9,10 @@ body.no-scroll {
 	overflow: hidden;
 }
 
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
 $mobile: 1079px;
 $min-mobile: 440px;
 
@@ -154,19 +158,19 @@ h3 {
 	  right: 5%;
 	  transform: translate(-50%, -50%);
 	  position: absolute;
-	  width: 50px;
+	  width: 40px;
 	  &:before, &:after, div {
 		  background: #fff;
 		  content: "";
 		  display: block;
-		  height: 6px;
+		  height: 4px;
 		  border-radius: 3px;
 		  margin: 7px 0;
 		  transition: 0.5s;
 	  }
 	  &.open {
 	  	&:before {
-	  		transform: translateY(12px) rotate(135deg);
+	  		transform: translateY(9.5px) rotate(135deg);
 	  	}
 	  	&:after {
 	  		transform: translateY(-12px) rotate(-135deg);
