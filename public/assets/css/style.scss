@@ -4,6 +4,7 @@ html {
 body {
 	background: black;
 	margin: 0;
+  touch-action: none;
 }
 body.no-scroll {
 	overflow: hidden;
@@ -62,22 +63,26 @@ h1 {
 }
 
 h2 {
-	font-size:  24px;
+	font-size:  22px;
 	& .bold {
 		font-weight: 700;
 	}
 }
 
 h3 {
-	font-size:  20px;
+	font-size:  22px;
 	font-weight: 700;
 	.light {
 		font-weight: 200;
 	}
 }
 
-.small-top-margin {
+.x-small-top-margin {
 	margin-top: 10px;
+}
+
+.small-top-margin {
+	margin-top: 20px;
 }
 
 .medium-top-margin {
@@ -234,12 +239,9 @@ h3 {
 				font-size: 16px;
 				font-weight: 300;
 				color: #bbb;
-				transition: all 0.5s ease-out;
 				border-bottom: 0;
 				padding-bottom: 5px;
 				&:hover {
-					font-size: 18px;
-					font-weight: 700;
 					color: white;
 				}
 				&.active {
@@ -275,7 +277,7 @@ h3 {
 	background-position: 50%;
 	background-color: black;
 	@media(max-width: $mobile) {
-		background-image: url('../images/hero-mobile.jpg');
+		background-image: url('../images/hero-mobile.png');
 		padding-left: 0px;
 		padding-right: 0px;
 	}
@@ -387,12 +389,11 @@ h3 {
 			}
 			a {
 				float: right;
-				background-color: white;
-				color: black;
-				font-size: 16px;
+				border: solid 1px white;
+				color: white;
+				font-size: 14px;
+				padding: 0px 4.5px;
 				font-weight: 700;
-				padding: 7.5px 15px;
-				border-bottom: 3px solid #a8a8a7;
 				transition: background-color 0.5s;
 				text-decoration: none;
 				@media(max-width: $mobile) {
@@ -492,14 +493,21 @@ h3 {
 			text-align: center;
 		}
 		margin-top: 35px;
+		p{
+			font-size: 14px;
+		}
 		.social {
 			display: flex;
-			justify-content: center;
+			justify-content: left;
+			@media(max-width: $mobile){
+				justify-content: center;
+			}
 			a{
 				margin-right: 5px;
 				width: 25px;
 				height: 25px;
-				background-color:  white;
+				border: solid 1px white;
+				background-color:  black;
 				transition: background-color 0.5s;
 				&:hover {
 					background-color:  #b2b2b2;
@@ -517,11 +525,12 @@ h3 {
 		}
 		.form {
 			input {
-				height: 30px;
+				height: 20px;
 				width: 200px;
 				border-radius: 0px;
-				border: none;
-				color: #999999;
+				border: solid 1px white;
+				color: white;
+				background-color: black;
 				padding-left: 15px;
 				&[type=submit] {
 					background-color: black;

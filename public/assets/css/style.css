@@ -3,7 +3,8 @@ html {
 
 body {
   background: black;
-  margin: 0; }
+  margin: 0;
+  touch-action: none; }
 
 body.no-scroll {
   overflow: hidden; }
@@ -48,18 +49,21 @@ h1 {
   top: 0; }
 
 h2 {
-  font-size: 24px; }
+  font-size: 22px; }
   h2 .bold {
     font-weight: 700; }
 
 h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700; }
   h3 .light {
     font-weight: 200; }
 
-.small-top-margin {
+.x-small-top-margin {
   margin-top: 10px; }
+
+.small-top-margin {
+  margin-top: 20px; }
 
 .medium-top-margin {
   margin-top: 45px; }
@@ -192,12 +196,9 @@ h3 {
         font-size: 16px;
         font-weight: 300;
         color: #bbb;
-        transition: all 0.5s ease-out;
         border-bottom: 0;
         padding-bottom: 5px; }
         .header .menu div a:hover {
-          font-size: 18px;
-          font-weight: 700;
           color: white; }
         .header .menu div a.active {
           font-size: 18px;
@@ -221,7 +222,7 @@ h3 {
   background-color: black; }
   @media (max-width: 1079px) {
     .hero {
-      background-image: url("../images/hero-mobile.jpg");
+      background-image: url("../images/hero-mobile.png");
       padding-left: 0px;
       padding-right: 0px; } }
 
@@ -324,12 +325,11 @@ h3 {
           margin-right: auto; } }
       .about > div div a {
         float: right;
-        background-color: white;
-        color: black;
-        font-size: 16px;
+        border: solid 1px white;
+        color: white;
+        font-size: 14px;
+        padding: 0px 4.5px;
         font-weight: 700;
-        padding: 7.5px 15px;
-        border-bottom: 3px solid #a8a8a7;
         transition: background-color 0.5s;
         text-decoration: none; }
         @media (max-width: 1079px) {
@@ -415,14 +415,20 @@ h3 {
       .footer > div {
         width: 100%;
         text-align: center; } }
+    .footer > div p {
+      font-size: 14px; }
     .footer > div .social {
       display: flex;
-      justify-content: center; }
+      justify-content: left; }
+      @media (max-width: 1079px) {
+        .footer > div .social {
+          justify-content: center; } }
       .footer > div .social a {
         margin-right: 5px;
         width: 25px;
         height: 25px;
-        background-color: white;
+        border: solid 1px white;
+        background-color: black;
         transition: background-color 0.5s; }
         .footer > div .social a:hover {
           background-color: #b2b2b2; }
@@ -434,11 +440,12 @@ h3 {
     .footer > div:first-child {
       margin-top: 0; }
     .footer > div .form input {
-      height: 30px;
+      height: 20px;
       width: 200px;
       border-radius: 0px;
-      border: none;
-      color: #999999;
+      border: solid 1px white;
+      color: white;
+      background-color: black;
       padding-left: 15px; }
       .footer > div .form input[type=submit] {
         background-color: black;
