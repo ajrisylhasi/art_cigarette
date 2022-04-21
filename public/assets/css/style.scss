@@ -294,7 +294,7 @@ h3 {
 		left: 0;
 		margin: auto;
 		right: 0;
-		background-image: url('../images/img-arrow.png');
+		// background-image: url('../images/img-arrow.png');
 		background-position-x: 50%;
 		background-position-y: 95%;
 		background-repeat: no-repeat;
@@ -519,9 +519,6 @@ h3 {
 					text-align: center;
 				}
 			}
-		}
-		&:first-child {
-			margin-top: 0;
 		}
 		.form {
 			input {
