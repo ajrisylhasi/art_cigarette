@@ -4,7 +4,6 @@ html {
 body {
   background: black;
   margin: 0;
-  touch-action: none;
 }
 body.no-scroll {
   overflow: hidden;
@@ -76,7 +75,7 @@ h3 .light {
   margin-top: 45px;
 }
 .main {
-  margin-top: 6vw;
+  margin-top: 110px;
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -134,7 +133,7 @@ h3 .light {
 .header {
   position: fixed;
   top: 0;
-  height: 13vw;
+  height: 220px;
   width: 100%;
   max-width: 1600px;
   background-image: url('../images/back-header.png');
@@ -254,8 +253,8 @@ h3 .light {
   position: relative;
   padding-left: 200px;
   padding-right: 200px;
-  min-height: 755px;
-  background-image: url('../images/hero.jpg');
+  min-height: 825px;
+  background-image: url('../images/hero-slims.png');
   background-size: cover;
   background-position: 50%;
   background-color: black;
@@ -430,6 +429,8 @@ h3 .light {
 .products div {
   width: 33%;
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 @media (max-width: 1079px) {
   .products div {
